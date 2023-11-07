@@ -19,7 +19,10 @@
                         <td>{{c.modelo}}</td>
                         <td>{{c.conductor}}</td>
                         <td><img :src="c.imagen" alt="img_coche" width="200"/></td>
-                        <td><router-link class="btn btn-outline-primary" :to="`/update/${c.idCoche}`">Update</router-link></td>
+                        <td>
+                            <router-link class="btn btn-outline-primary" :to="`/update/${c.idCoche}`">Update</router-link>
+                            <router-link class="btn btn-outline-danger" :to="`/delete/${c.idCoche}`">Delete</router-link>
+                        </td>
                     </tr>
                 </tbody>
             </table>

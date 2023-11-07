@@ -24,4 +24,37 @@ export default class ServiceCoches{
             })
         })
     }
+
+    findCoche(idCoche){
+        return new Promise(function(resolve){
+            let request = `api/coches/findcoche/${idCoche}`
+            let url = Global.URL_ApiCoches + request;
+            let coche = {};
+            axios.get(url).then(response=>{
+                coche = response.data;
+                resolve(coche);
+            })
+        })
+    }
+
+    updateCoche(coche){
+        return new Promise(function(resolve){
+            let request = "api/coches/updatecoche";
+            let url = Global.URL_ApiCoches + request;
+            axios.put(url,coche).then(response=>{
+                resolve(response);
+            })
+
+        })
+    }
+
+    deleteCoche(idCoche){
+        return new Promise(function(resolve){
+            let request = `api/coches/deletecoche/${idCoche}`;
+            let url = Global.URL_ApiCoches + request;
+            axios.delete(url).then(response=>{
+                resolve(response);
+            })
+        })
+    }
 }

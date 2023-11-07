@@ -3,6 +3,7 @@ import HomeComponent from './components/HomeComponent.vue';
 import CochesComponent from './components/CochesComponent.vue';
 import CreateCoche from './components/CreateCoche.vue';
 import UpdateCoche from './components/UpdateCoche.vue';
+import DeleteCoche from './components/DeleteCoche.vue';
 
 const myRoutes = [
     {
@@ -16,6 +17,9 @@ const myRoutes = [
     },
     {
         path:"/update/:id", component: UpdateCoche
+    },
+    {
+        path:"/delete/:id", component: DeleteCoche
     }
 ]
 
